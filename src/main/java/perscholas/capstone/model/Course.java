@@ -21,7 +21,7 @@ public class Course {
     private int numberOfCredits;
 
     @ManyToMany
-    @JoinTable(name = "CourseEnrollments",
+    @JoinTable(name = "courseenrollments",
     joinColumns = @JoinColumn(name = "course_id"),
     inverseJoinColumns = @JoinColumn(name = "enrolled_student_id", referencedColumnName = "id"))
     private Set<Student> enrolledStudents;
