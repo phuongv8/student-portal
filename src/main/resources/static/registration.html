@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registration</title>
+
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="jquery/jquery-3.6.0.min.js"></script>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="css/registration.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+<div class="container">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <a href="/" class="navbar-brand text-dark">
+      Home
+    </a>
+  </header>
+</div>
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="images/register.png" alt=""  height="150">
+      <h1>New Student Registration</h1>
+    </div>
+
+    <div class="container">
+      <h2 class="pb-2 border-bottom mt-4">Student Information</h2>
+      <form class="needs-validation" novalidate action="/register" method="get">
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <label for="firstName" class="form-label">First name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="" value="" required name="firstName">
+            <div class="invalid-feedback">
+              First name is empty.
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <label for="lastName" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="" value="" required name="lastName">
+            <div class="invalid-feedback">
+              Last name is empty.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required placeholder="you@example.com" name="email">
+            <div class="invalid-feedback">
+              Please enter a valid email address.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="dateOfBirth" class="form-label">Date Of Birth</label>
+            <input type="date" class="form-control" id="dateOfBirth" required name="dateOfBirth">
+            <div class="invalid-feedback">
+              Date of birth is empty.
+            </div>
+          </div>
+        </div>
+
+
+        <h2 class="pb-2 border-bottom my-4">Program Details</h2>
+        <div class="row">
+
+          <div class="col-sm-6">
+            <label for="fieldOfStudy" class="form-label">Field Of Study</label>
+            <select required class="form-select form-select-lg mb-3" aria-label=".form-select-lg" id="fieldOfStudy" name="fieldOfStudy">
+              <option value="">Choose Your Major</option>
+              <option>Hamster Wheel Engineering</option>
+              <option>Nest Architecture</option>
+              <option>Seed Analysis and Foraging</option>
+            </select>
+          </div>
+
+          <div class="col-sm-6">
+            <label for="degree" class="form-label">Degree</label>
+            <select required class="form-select form-select-lg mb-3" aria-label=".form-select-lg" id="degree" name="degree">
+              <option value="">Only bachelor degree is available at the moment</option>
+              <option value="BACHELOR">Bachelor</option>
+            </select>
+          </div>
+        </div>
+        <br>
+        <div class="text-center">
+          <button class="btn btn-primary btn-lg" type="submit">Register</button>
+        </div>
+
+      </form>
+    </div>
+  </main>
+</div>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/registration.js"></script>
+</body>
+</html>
