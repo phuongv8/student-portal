@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>UOH Student Portal</title>
+
+
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/jquery/jquery-3.6.0.min.js"></script>
+
+
+    <link href="/css/student_view.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <a th:href="@{/student(student_id=${student_id})}" class="navbar-brand text-dark">
+            Student Profile
+        </a>
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="/students" class="nav-link px-2 link-dark">Students</a></li>
+            <li><a href="/programs" class="nav-link px-2 link-dark">Programs</a></li>
+            <li><a href="/courses" class="nav-link px-2 link-dark">Courses</a></li>
+        </ul>
+        <div class="col-md-3 text-end">
+            <a class="btn btn-outline-primary me-2" href="/">Log Out</a>
+        </div>
+    </header>
+</div>
+
+<main>
+    <div class="container">
+        <!-- Profile -->
+        <div class="container" th:if="not ${show_courses}">
+            <h2 class="pb-2 border-bottom mt-4">Your Student Profile</h2>
+            <br>
+            <dl class="row">
+  				<dt class="col-sm-3">First Name</dt>
+  				<dd class="col-sm-9" th:text="${student.firstName}"></dd>
+  				<dt class="col-sm-3">Last Name</dt>
+  				<dd class="col-sm-9" th:text="${student.lastName}"></dd>
+  				<dt class="col-sm-3">Email Address</dt>
+  				<dd class="col-sm-9" th:text="${student.email}"></dd>
+  				<dt class="col-sm-3">Date of Birth</dt>
+  				<dd class="col-sm-9" th:text="${student.dateOfBirth}"></dd>
+  			</dl>
+  			<h3>Learner Profile</h3>
+  			<dl class="row">
+  				<dt class="col-sm-3">Start Year</dt>
+  				<dd class="col-sm-9" th:text="${student.learnerProfile.startYear}"></dd>
+  				<dt class="col-sm-3">Number of Credits</dt>
+  				<dd class="col-sm-9" th:text="${student.learnerProfile.numberOfCredits}"></dd>
+  				<dt class="col-sm-3">Graduated</dt>
+  				<dd class="col-sm-9" th:text="${student.learnerProfile.isGraduated ? 'Yes' : 'No'}"></dd>
+  				<dt class="col-sm-3">Current GPA</dt>
+  				<dd class="col-sm-9" th:text="${student.learnerProfile.gpa}"></dd>
+  			</dl>
+            <a class="btn btn-primary" th:href="@{/student/courses#courses-available(student_id=${student_id})}">Enroll in courses</a>
+  			<a class="btn btn-primary" th:href="@{/student/courses#courses-enrolled(student_id=${student_id})}">View enrolled courses</a>
+        </div>
+
+        <!-- COURSES -->
+        <div class="container" th:if="${show_courses}">
+            <h2 class="pb-2 border-bottom mt-4" id="courses-available">Fall 2023 Available Courses</h2>
+            <br>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col" th:each="course: ${all_courses}" th:if=" not ${#sets.contains(student_courses, course)}">
+                    <div class="card shadow-sm bg-light h-100 d-flex flex-column">
+                        <div class="card-body">
+                            <h4 class="text-center py-2 card-title" th:text="${#strings.abbreviate(course.title, 120)}">Course</h4>
+                            <p class="card-text font-italic card-text" th:text="${#strings.abbreviate(course.description, 130)}"> Description</p>
+                        </div>
+                        <div class="text-center mt-auto mb-4">
+                            <form th:action="@{/student/enroll(student_id=${student_id}, course_id=${course.courseId})}" method="post">
+                                <button type="submit" class="btn btn-success">
+                                    Enroll
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="pb-2 border-bottom mt-4" th:if="${not student_courses.empty}" id="courses-enrolled">Your enrolled courses</h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+					<div class="col" th:each="course: ${student_courses}">
+                    <div class="card shadow-sm bg-light d-flex flex-column">
+                        <div class="card-body">
+                            <h4 class="text-center py-2 card-title" th:text="${#strings.abbreviate(course.title, 120)}">Course</h4>
+                            <p class="card-text font-italic card-text" th:text="${#strings.abbreviate(course.description, 130)}"> Description</p>
+                        </div>
+                        <div class="text-center mt-auto mb-4">
+                            <form th:action="@{/student/leave_course(student_id=${student_id}, course_id=${course.courseId})}" th:if="${#sets.contains(student_courses, course)}" method="post">
+                                <button type="submit" class="btn btn-outline-danger" >
+                                    Drop Course
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
