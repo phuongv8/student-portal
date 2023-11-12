@@ -28,16 +28,11 @@ public class RegistrationController {
                                    @RequestParam("dateOfBirth")
                                    @DateTimeFormat(pattern = "yyyy-MM-dd")
                                    LocalDate dateOfBirth,
-                                   @RequestParam("fieldOfStudy") String fieldOfStudy,
-                                   @RequestParam("degree") String degreeString) {
+                                   @RequestParam("fieldOfStudy") String fieldOfStudy) {
         Program program = programService.getProgram(fieldOfStudy);
 
         studentsService.addStudent(firstName, lastName, email, dateOfBirth, program);
 
         return "redirect:/";
     }
-
-
-
-
 }
