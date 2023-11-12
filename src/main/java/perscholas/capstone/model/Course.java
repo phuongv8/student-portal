@@ -6,7 +6,8 @@ import java.util.Set;
 
 /**
  * Represents a Course in the education system.
- * Contains information about the course and its enrolled students.
+ * This class contains details about the course such as title, description,
+ * the number of credits it offers, and the students enrolled in it.
  */
 
 @Entity
