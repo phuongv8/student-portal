@@ -3,8 +3,9 @@ package perscholas.capstone.model;
 import jakarta.persistence.*;
 
 /**
- A Persistence entity that represent profile of the student that they can see when they log in
- **/
+ * Represents the profile student will see when they log in.
+ * This includes details about their academic progress, such as credits earned, GPA, and graduation status.
+ */
 
 @Entity
 @Table(name = "learnerprofiles")
@@ -73,6 +74,4 @@ public class LearnerProfile {
     public void setStudent(Student student) {
         this.student = student;
     }
-
-
 }
