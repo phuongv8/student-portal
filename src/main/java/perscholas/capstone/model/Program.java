@@ -6,8 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- A Persistence entity that represents a bachelor degree of a field of study that student can pursue
- **/
+ * Represents a bachelor degree in the university system.
+ * This class contains details about the program, including its field of study,
+ * the required credits for graduation, and the students enrolled in it.
+ */
+
 @Entity
 @Table(name = "Programs")
 public class Program {
@@ -45,6 +48,9 @@ public class Program {
         return fieldOfStudy;
     }
 
+    /**
+     * Gets the list of students enrolled in this Program.
+     */
     public List<Student> getStudents() {
         return students;
     }
