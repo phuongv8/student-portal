@@ -1,12 +1,24 @@
 # Capstone Project
 Github link: https://github.com/phuongv8/capstone
 
+## Overview
+
+The Student Portal is a Java-based web application designed to manage student enrollments and academic information at a university. It uses Spring Boot, JPA/Hibernate, and Thymeleaf for its implementation, and it is designed to work with a MySQL database.
+
 ## Features
-- **Student Management**: View student profile.
-- **Course Management**: View courses; enroll and drop courses.
-- **Program Management**: View academic programs.
-- **Login & Registration**: Handle student login and registration processes.
-- **Views**: Public views for listing all students, courses, and programs.
+- **Student Registration**: New students can register, providing their personal and academic details.
+- **Course Enrollment**: Registered students can enroll in courses.
+- **Learner Profiles**: Each student has a learner profile that tracks their credits, GPA, and graduation status.
+- **Program Management**: Administrators can create and manage academic programs and courses.
+- **Data Persistence**: Student and course data are persisted in a MySQL database.
+- **Security**: The application includes basic login and authentication features.
+
+## Technologies Used
+- **Spring Boot**: For creating the web application framework.
+- **Java Persistence API (JPA) with Hibernate**: For object-relational mapping and data handling.
+- **Thymeleaf**: For server-side rendering of HTML views.
+- **MySQL**: As the backend database.
+- **Spring Security**: For basic authentication.
 
 ### Prerequisites
 - Java JDK 11 or higher
@@ -39,12 +51,6 @@ spring.sql.init.data-locations=classpath:data.sql
 
 ## Manual Initialization
 If you prefer to manually initialize the database, you can use the provided SQL scripts in src/main/resources/sql_queries.  
+
 # Running the application
-Once you've updated and saved your application.properties file, you can start the application with:
-```bash
-./mvnw spring-boot:run
-```
-or if you have a pre-packaged .jar:
-```bash
-java -jar capstone.jar
-```
+Open a web browser and navigate to `http://localhost:8080`.
