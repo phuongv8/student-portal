@@ -24,7 +24,7 @@ public class Program {
     @Column(nullable = false)
     private String fieldOfStudy;
 
-    @OneToMany(mappedBy = "program")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "program")
     private final List<Student> students = new ArrayList<>();
 
     public Program() {
