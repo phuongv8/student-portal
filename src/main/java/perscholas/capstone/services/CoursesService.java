@@ -1,6 +1,8 @@
 package perscholas.capstone.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import perscholas.capstone.model.Course;
 import perscholas.capstone.model.Student;
 import perscholas.capstone.repositories.CoursesRepository;
@@ -18,10 +20,12 @@ import java.util.Optional;
 public class CoursesService {
     private final CoursesRepository coursesRepository;
 
+    @Autowired
     public CoursesService(CoursesRepository coursesRepository) {
         this.coursesRepository = coursesRepository;
     }
 
+    @Transactional(readOnly = true)
     public List<Course> getAllCourses() {
         return coursesRepository.findAll();
     }

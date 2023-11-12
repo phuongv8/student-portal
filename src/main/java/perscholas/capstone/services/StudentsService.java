@@ -1,5 +1,6 @@
 package perscholas.capstone.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import perscholas.capstone.model.Course;
 import perscholas.capstone.model.LearnerProfile;
@@ -24,6 +25,7 @@ public class StudentsService {
     private final StudentsRepository studentsRepository;
     private final LearnerProfilesRepository learnerProfilesRepository;
 
+    @Autowired
     public StudentsService(StudentsRepository studentsRepository, LearnerProfilesRepository learnerProfilesRepository) {
         this.studentsRepository = studentsRepository;
         this.learnerProfilesRepository = learnerProfilesRepository;

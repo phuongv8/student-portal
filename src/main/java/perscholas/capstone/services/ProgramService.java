@@ -1,7 +1,9 @@
 package perscholas.capstone.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import perscholas.capstone.model.Program;
 import perscholas.capstone.repositories.ProgramsRepository;
 
@@ -18,10 +20,14 @@ import java.util.Optional;
 public class ProgramService {
     private final ProgramsRepository programsRepository;
 
+    @Autowired
     public ProgramService(ProgramsRepository programsRepository) {
         this.programsRepository = programsRepository;
     }
 
+    /**
+     * Returns the Program object by field of study from the database if it exists
+     */
     public Program getProgram(String fieldOfStudy) {
         Optional<Program> program = programsRepository.findByFieldOfStudy(fieldOfStudy);
         if (program.isPresent()) {
@@ -30,6 +36,10 @@ public class ProgramService {
         return null;
     }
 
+    /**
+     * Returns all the programs from the database
+     */
+    @Transactional(readOnly = true)
     public List<Program> getAllPrograms() {
         Sort sortOrder = Sort.by("fieldOfStudy").ascending();
         return programsRepository.findAll(sortOrder);
