@@ -86,4 +86,7 @@ public class Student {
     }
 
 
+    public void setLearnerProfile(LearnerProfile learnerProfile) {
+        this.learnerProfile = learnerProfile;
+    }
 }
