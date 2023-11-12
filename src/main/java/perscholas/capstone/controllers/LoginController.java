@@ -18,6 +18,7 @@ import java.util.Optional;
 @Controller
 public class LoginController {
     private final StudentsService studentsService;
+    private static final String LOGIN_PAGE = "login";
 
     public LoginController(StudentsService studentsService) {
         this.studentsService = studentsService;
@@ -28,7 +29,7 @@ public class LoginController {
      */
     @GetMapping("/login")
     public String login() {
-        return "login";
+        return LOGIN_PAGE;
     }
 
     /**
@@ -44,13 +45,13 @@ public class LoginController {
         if (student.isEmpty()) {
             model.addAttribute("error", true);
             model.addAttribute("error_message", "Student with this email wasn't found");
-            return "login";
+            return LOGIN_PAGE;
         }
 
         if (!student.get().getLastName().equalsIgnoreCase(password)) {
             model.addAttribute("error", true);
             model.addAttribute("error_message", "Password doesn't match");
-            return "login";
+            return LOGIN_PAGE;
         }
 
         return "redirect:student?student_id=" + student.get().getId();

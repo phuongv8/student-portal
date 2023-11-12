@@ -20,6 +20,7 @@ import java.util.Locale;
 public class RegistrationController {
     private final StudentsService studentsService;
     private final ProgramService programService;
+    private static final String REDIRECT_HOME = "redirect:/";
 
     public RegistrationController(StudentsService studentsService, ProgramService programService) {
         this.studentsService = studentsService;
@@ -43,6 +44,6 @@ public class RegistrationController {
 
         studentsService.addStudent(firstName, lastName, email, dateOfBirth, program);
 
-        return "redirect:/";
+        return REDIRECT_HOME;
     }
 }

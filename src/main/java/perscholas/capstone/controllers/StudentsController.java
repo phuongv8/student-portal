@@ -24,6 +24,9 @@ public class StudentsController {
     private final StudentsService studentsService;
     private final CoursesService coursesService;
 
+    private static final String STUDENT_VIEW = "student_view";
+    private static final String REDIRECT_HOME = "redirect:/";
+
     public StudentsController(StudentsService studentsService, CoursesService coursesService) {
         this.studentsService = studentsService;
         this.coursesService = coursesService;
@@ -38,14 +41,14 @@ public class StudentsController {
         if (student.isEmpty()) {
             System.err.printf("Student with Id %d doesn't exist%n",
                     studentId);
-            return "redirect:/";
+            return REDIRECT_HOME;
         }
 
         model.addAttribute("student_id", student.get().getId());
         model.addAttribute("student", student.get());
         showStudentProfile(model);
 
-        return "student_view";
+        return STUDENT_VIEW;
     }
 
     /**
@@ -58,14 +61,14 @@ public class StudentsController {
         if (student.isEmpty()) {
             System.err.printf("Student with Id %d doesn't exist%n",
                     studentId);
-            return "redirect:/";
+            return REDIRECT_HOME;
         }
         model.addAttribute("student_id", studentId);
         model.addAttribute("all_courses", coursesService.getAllCourses());
         model.addAttribute("student_courses",
                 studentsService.getAllStudentCourses(student.get()));
         showAllCourses(model);
-        return "student_view";
+        return STUDENT_VIEW;
     }
 
     /**
@@ -80,14 +83,14 @@ public class StudentsController {
         if (student.isEmpty()) {
             System.err.printf("Trying to enroll a student with Id %d that doesn't exist%n",
                     studentId);
-            return "redirect:/";
+            return REDIRECT_HOME;
         }
 
         Optional<Course> course = coursesService.findCourseById(courseId);
         if (course.isEmpty()) {
             System.err.printf("Trying to enroll a student to course Id: %d that doesn't exist%n",
                     courseId);
-            return "redirect:/";
+            return REDIRECT_HOME;
         }
 
         coursesService.enrollStudent(course.get(), student.get());
@@ -98,7 +101,7 @@ public class StudentsController {
                 studentsService.getAllStudentCourses(student.get()));
 
         showAllCourses(model);
-        return "student_view";
+        return STUDENT_VIEW;
     }
 
     /**
@@ -113,7 +116,7 @@ public class StudentsController {
         if (student.isEmpty()) {
             System.err.printf("Trying to un-enroll a student with Id %d that doesn't exist%n",
                     studentId);
-            return "redirect:/";
+            return REDIRECT_HOME;
         }
 
         Optional<Course> course = coursesService.findCourseById(courseId);
@@ -121,7 +124,7 @@ public class StudentsController {
             System.err.printf("Trying to un-enroll a student from course Id: %d that doesn't " +
                             "exist%n",
                     courseId);
-            return "redirect:/";
+            return REDIRECT_HOME;
         }
 
         coursesService.removeStudent(course.get(), student.get());
@@ -132,7 +135,7 @@ public class StudentsController {
                 studentsService.getAllStudentCourses(student.get()));
 
         showAllCourses(model);
-        return "student_view";
+        return STUDENT_VIEW;
     }
 
     /**

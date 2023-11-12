@@ -24,6 +24,7 @@ public class HomePageController {
     private final StudentsService studentsService;
     private final ProgramService programService;
     private final CoursesService coursesService;
+    private static final String PUBLIC_VIEW = "public_view";
 
     public HomePageController(LearnerProfileService learnerProfileService,
                               StudentsService studentsService,
@@ -47,7 +48,7 @@ public class HomePageController {
         model.addAttribute("show_courses", false);
         model.addAttribute("show_programs", false);
         model.addAttribute("show_scores", false);
-        return "public_view";
+        return PUBLIC_VIEW;
     }
 
     /**
@@ -63,7 +64,7 @@ public class HomePageController {
         model.addAttribute("show_courses", true);
         model.addAttribute("show_programs", false);
         model.addAttribute("show_scores", false);
-        return "public_view";
+        return PUBLIC_VIEW;
     }
 
     /**
@@ -78,7 +79,7 @@ public class HomePageController {
         model.addAttribute("show_courses", false);
         model.addAttribute("show_programs", true);
         model.addAttribute("show_scores", false);
-        return "public_view";
+        return PUBLIC_VIEW;
     }
 }
 
