@@ -5,9 +5,9 @@ import jakarta.persistence.*;
 import java.util.Set;
 
 /**
- A Persistence entity that a course that the student can enroll or drop out of.
- Each course worth a certain amount of credits that students need to complete in order to graduate.
- **/
+ * Represents a Course in the education system.
+ * Contains information about the course and its enrolled students.
+ */
 
 @Entity
 @Table(name = "Courses")

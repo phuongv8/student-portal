@@ -9,7 +9,7 @@ import java.util.Set;
  A Persistence entity that represents a student (in this case, hamster) registered at the university
  **/
 @Entity
-@Table(name = "Students")
+@Table(name = "students")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,7 @@ public class Student {
 
     private LocalDate dateOfBirth;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "profile_id")
     private LearnerProfile learnerProfile;
 
@@ -34,7 +34,7 @@ public class Student {
     @JoinColumn(name = "program_id")
     private Program program;
 
-    @ManyToMany(mappedBy = "enrolledStudents")
+    @ManyToMany(mappedBy = "enrolledStudents", cascade = CascadeType.ALL)
     private Set<Course> enrolledIn;
 
     public Student() {
@@ -49,7 +49,7 @@ public class Student {
         this.lastName = lastName;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
-        this.learnerProfile = new LearnerProfile((short) LocalDate.now().getYear());
+//        this.learnerProfile = new LearnerProfile((short) LocalDate.now().getYear());
         this.program = program;
     }
 

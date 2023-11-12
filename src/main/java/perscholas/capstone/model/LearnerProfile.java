@@ -9,6 +9,8 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "learnerprofiles")
 public class LearnerProfile {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long profileId;
@@ -17,6 +19,7 @@ public class LearnerProfile {
 
     private float gpa;
     private boolean isGraduated;
+
     private short startYear;
 
     @OneToOne(mappedBy = "learnerProfile")
@@ -51,5 +54,29 @@ public class LearnerProfile {
 
     public Student getStudent() {
         return student;
+    }
+
+    public void setNumberOfCredits(int numberOfCredits) {
+        this.numberOfCredits = numberOfCredits;
+    }
+
+    public void setGpa(float gpa) {
+        this.gpa = gpa;
+    }
+
+    public void setGraduated(boolean graduated) {
+        isGraduated = graduated;
+    }
+
+    public void setStartYear(short startYear) {
+        this.startYear = startYear;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public void setProfileId(Long profileId) {
+        this.profileId = profileId;
     }
 }
