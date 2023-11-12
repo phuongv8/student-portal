@@ -1,6 +1,19 @@
 # Capstone Project
 Github link: https://github.com/phuongv8/capstone
 
+## Features
+- **Student Management**: View student profile.
+- **Course Management**: View courses; enroll and drop courses.
+- **Program Management**: View academic programs.
+- **Login & Registration**: Handle student login and registration processes.
+- **Views**: Public views for listing all students, courses, and programs.
+
+### Prerequisites
+- Java JDK 11 or higher
+- Spring Boot 2.x
+- MySQL 5.7 or higher
+- Maven 3.6 or higher
+
 # Database setup
 Before running the application, you need to create the database.   
 To create the required database within MySQL:
