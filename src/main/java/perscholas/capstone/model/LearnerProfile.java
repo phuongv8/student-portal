@@ -9,8 +9,6 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "learnerprofiles")
 public class LearnerProfile {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long profileId;
@@ -76,7 +74,5 @@ public class LearnerProfile {
         this.student = student;
     }
 
-    public void setProfileId(Long profileId) {
-        this.profileId = profileId;
-    }
+
 }
