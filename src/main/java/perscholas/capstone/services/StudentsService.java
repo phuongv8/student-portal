@@ -1,7 +1,9 @@
 package perscholas.capstone.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import perscholas.capstone.model.Course;
 import perscholas.capstone.model.LearnerProfile;
 import perscholas.capstone.model.Program;
@@ -9,6 +11,7 @@ import perscholas.capstone.model.Student;
 import perscholas.capstone.repositories.LearnerProfilesRepository;
 import perscholas.capstone.repositories.StudentsRepository;
 
+import javax.xml.crypto.Data;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -34,15 +37,24 @@ public class StudentsService {
     /**
      * Finds a student by their email address.
      */
+    @Transactional(readOnly = true)
     public Optional<Student> findStudentByEmail(String email) {
-        return studentsRepository.findByEmail(email);
+        try {
+            return studentsRepository.findByEmail(email);
+        } catch (DataAccessException e) {
+            throw new StudentServiceException("Error finding student by email: " + email, e);
+        }
     }
-
     /**
      * Retrieves all registered students.
      */
+    @Transactional(readOnly = true)
     public List<Student> getAllRegisteredStudents() {
-        return studentsRepository.findAll();
+        try {
+            return studentsRepository.findAll();
+        } catch (DataAccessException e) {
+            throw new StudentServiceException("Error retrieving all registered students", e);
+        }
     }
 
     /**
@@ -52,6 +64,9 @@ public class StudentsService {
                            String lastName,
                            String email, LocalDate dateOfBirth,
                            Program program) {
+        try {
+
+
         LearnerProfile learnerProfile = new LearnerProfile();
         learnerProfile.setNumberOfCredits(0);
         learnerProfile.setGraduated(false);
@@ -63,19 +78,38 @@ public class StudentsService {
 
         learnerProfilesRepository.save(learnerProfile);
         studentsRepository.save(student);
+        } catch (DataAccessException e) {
+            throw new StudentServiceException("Error adding new student", e);
+        }
     }
 
     /**
      * Finds a student by their unique ID.
      */
+    @Transactional(readOnly = true)
     public Optional<Student> findStudentById(Long id) {
-        return studentsRepository.findById(id);
+        try {
+            return studentsRepository.findById(id);
+        } catch (DataAccessException e) {
+            throw new StudentServiceException("Error finding student by ID: " + id, e);
+        }
     }
 
     /**
      * Retrieves all courses a student is enrolled in.
      */
+    @Transactional(readOnly = true)
     public Set<Course> getAllStudentCourses(Student student) {
-        return student.getEnrolledIn();
+        try {
+            return student.getEnrolledIn();
+        } catch (DataAccessException e) {
+            throw new StudentServiceException("Error retrieving courses for student", e);
+        }
+    }
+
+    public static class StudentServiceException extends RuntimeException {
+        public StudentServiceException(String message, Throwable cause) {
+            super(message, cause);
+        }
     }
 }
