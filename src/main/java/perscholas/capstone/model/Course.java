@@ -2,6 +2,7 @@ package perscholas.capstone.model;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -21,11 +22,13 @@ public class Course {
     private String description;
     private int numberOfCredits;
 
-    @ManyToMany
-    @JoinTable(name = "courseenrollments",
-    joinColumns = @JoinColumn(name = "course_id"),
-    inverseJoinColumns = @JoinColumn(name = "enrolled_student_id", referencedColumnName = "id"))
-    private Set<Student> enrolledStudents;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "courseenrollments",
+            joinColumns = @JoinColumn(name = "course_id"),
+            inverseJoinColumns = @JoinColumn(name = "enrolled_student_id", referencedColumnName = "id")
+    )
+    private Set<Student> enrolledStudents = new HashSet<>();
 
     public Course() {}
 
