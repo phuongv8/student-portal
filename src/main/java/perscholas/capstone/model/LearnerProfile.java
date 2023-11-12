@@ -21,7 +21,7 @@ public class LearnerProfile {
 
     private short startYear;
 
-    @OneToOne(mappedBy = "learnerProfile")
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "learnerProfile")
     private Student student;
 
     public LearnerProfile() {
