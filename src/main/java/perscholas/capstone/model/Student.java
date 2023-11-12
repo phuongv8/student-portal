@@ -6,8 +6,10 @@ import java.time.LocalDate;
 import java.util.Set;
 
 /**
- A Persistence entity that represents a student (in this case, hamster) registered at the university
- **/
+ * Represents a student in the university system.
+ * This class contains personal details of the student, their academic profile,
+ * the program they are enrolled in, and the courses they are taking.
+ */
 @Entity
 @Table(name = "students")
 public class Student {
@@ -49,7 +51,6 @@ public class Student {
         this.lastName = lastName;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
-//        this.learnerProfile = new LearnerProfile((short) LocalDate.now().getYear());
         this.program = program;
     }
 
