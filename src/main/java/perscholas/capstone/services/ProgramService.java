@@ -8,10 +8,15 @@ import perscholas.capstone.repositories.ProgramsRepository;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Service class for managing academic programs.
+ * This class provides methods for retrieving a specific program by its field of study
+ * and for fetching a list of all available programs, sorted by field of study.
+ */
+
 @Service
 public class ProgramService {
     private final ProgramsRepository programsRepository;
-
 
     public ProgramService(ProgramsRepository programsRepository) {
         this.programsRepository = programsRepository;

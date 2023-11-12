@@ -13,6 +13,11 @@ import perscholas.capstone.services.StudentsService;
 
 import java.util.List;
 
+/**
+ * Controller class for handling requests to the home page and its related sections.
+ * This class provides endpoints for displaying lists of students, courses, and programs on the home page.
+ */
+
 @Controller
 public class HomePageController {
     private final LearnerProfileService learnerProfileService;
@@ -24,13 +29,15 @@ public class HomePageController {
                               StudentsService studentsService,
                               ProgramService programService,
                               CoursesService coursesService) {
-
         this.learnerProfileService = learnerProfileService;
         this.studentsService = studentsService;
         this.programService = programService;
         this.coursesService = coursesService;
     }
 
+    /**
+     * Handles the request to display all registered students.
+     */
     @GetMapping("/students")
     public String getAllStudents(Model model) {
         List<Student> allRegisteredStudents = studentsService.getAllRegisteredStudents();
@@ -42,6 +49,10 @@ public class HomePageController {
         model.addAttribute("show_scores", false);
         return "public_view";
     }
+
+    /**
+     * Handles the request to display all courses.
+     */
     @GetMapping("/courses")
     public String displayAllCourses(Model model) {
         List<Course> courses =
@@ -55,6 +66,9 @@ public class HomePageController {
         return "public_view";
     }
 
+    /**
+     * Handles the request to display all academic programs.
+     */
     @GetMapping("/programs")
     public String displayAllPrograms(Model model) {
         List<Program> programs = programService.getAllPrograms();
@@ -66,7 +80,5 @@ public class HomePageController {
         model.addAttribute("show_scores", false);
         return "public_view";
     }
-
-
 }
 

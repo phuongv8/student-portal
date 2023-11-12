@@ -13,6 +13,12 @@ import perscholas.capstone.services.StudentsService;
 
 import java.util.Optional;
 
+/**
+ * Controller class for handling student-related web requests.
+ * This class provides endpoints for student profile management, course enrollment,
+ * and viewing enrolled courses.
+ */
+
 @Controller
 public class StudentsController {
     private final StudentsService studentsService;
@@ -23,6 +29,9 @@ public class StudentsController {
         this.coursesService = coursesService;
     }
 
+    /**
+     * Handles the request to get a student's profile.
+     */
     @RequestMapping("/student")
     public String getStudentProfile(@RequestParam("student_id") Long studentId, Model model) {
         Optional<Student> student = studentsService.findStudentById((studentId));
@@ -39,6 +48,9 @@ public class StudentsController {
         return "student_view";
     }
 
+    /**
+     * Handles the request to view all courses available for a student.
+     */
     @GetMapping("/student/courses")
     public String getAllCourses(@RequestParam("student_id") Long studentId, Model model) {
 
@@ -56,6 +68,9 @@ public class StudentsController {
         return "student_view";
     }
 
+    /**
+     * Handles the request for a student to enroll in a course.
+     */
     @PostMapping("/student/enroll")
     public String enrollInCourse(@RequestParam("student_id") Long studentId,
                                  @RequestParam("course_id") Long courseId,
@@ -86,6 +101,9 @@ public class StudentsController {
         return "student_view";
     }
 
+    /**
+     * Handles the request for a student to leave a course.
+     */
     @PostMapping("/student/leave_course")
     public String leaveCourse(@RequestParam("student_id") Long studentId,
                               @RequestParam("course_id") Long courseId,
@@ -117,10 +135,16 @@ public class StudentsController {
         return "student_view";
     }
 
+    /**
+     * Updates the model to display the student's profile.
+     */
     private void showStudentProfile(Model model) {
         model.addAttribute("show_courses", false);
     }
 
+    /**
+     * Updates the model to display all courses for the student.
+     */
     private void showAllCourses(Model model) {
         model.addAttribute("show_courses", true);
     }

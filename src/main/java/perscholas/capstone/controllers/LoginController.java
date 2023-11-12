@@ -10,6 +10,11 @@ import perscholas.capstone.services.StudentsService;
 
 import java.util.Optional;
 
+/**
+ * Controller class for handling student login requests.
+ * This class provides endpoints for students to log in to the system using their credentials.
+ */
+
 @Controller
 public class LoginController {
     private final StudentsService studentsService;
@@ -18,11 +23,19 @@ public class LoginController {
         this.studentsService = studentsService;
     }
 
+    /**
+     * Handles the request to display the login page.
+     */
     @GetMapping("/login")
     public String login() {
         return "login";
     }
 
+    /**
+     * Handles the POST request for student login.
+     * Validates the student's email and password, and redirects to the student profile page upon successful login.
+     * @return The name of the view to be rendered or a redirection on successful login.
+     */
     @PostMapping("/login")
     public String studentLogin(@RequestParam("email") String email,
                                @RequestParam("password") String password,
@@ -42,5 +55,4 @@ public class LoginController {
 
         return "redirect:student?student_id=" + student.get().getId();
     }
-
 }

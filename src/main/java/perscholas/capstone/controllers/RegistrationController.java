@@ -11,6 +11,11 @@ import perscholas.capstone.services.StudentsService;
 import java.time.LocalDate;
 import java.util.Locale;
 
+/**
+ * Controller class for handling registration of new students.
+ * This class provides endpoints for new students to sign up and get registered in the system.
+ */
+
 @Controller
 public class RegistrationController {
     private final StudentsService studentsService;
@@ -21,6 +26,11 @@ public class RegistrationController {
         this.programService = programService;
     }
 
+    /**
+     * Handles the request to sign up a new student.
+     * Registers a student with the provided personal details and enrolls them in a program.
+     * @return A redirection to the home page after successful registration.
+     */
     @GetMapping("/register")
     public String signUpNewStudent(@RequestParam("firstName") String firstName,
                                    @RequestParam("lastName") String lastName,

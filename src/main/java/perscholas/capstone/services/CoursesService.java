@@ -8,6 +8,12 @@ import perscholas.capstone.repositories.CoursesRepository;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Service class for managing courses.
+ * This class provides methods for retrieving all courses, finding a specific course by ID,
+ * enrolling a student in a course, and removing a student from a course.
+ */
+
 @Service
 public class CoursesService {
     private final CoursesRepository coursesRepository;
