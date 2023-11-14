@@ -17,7 +17,7 @@ public interface StudentsRepository extends JpaRepository<Student, Long> {
      * Future implementation
      * Find students enrolled in a specific field of study
      */
-    @Query("SELECT s FROM Students s WHERE s.program.fieldOfStudy = :fieldOfStudy")
+    @Query("SELECT s FROM Student s WHERE s.program.fieldOfStudy = :fieldOfStudy")
     List<Student> findByFieldOfStudy(@Param("fieldOfStudy") String fieldOfStudy);
 
     /**
