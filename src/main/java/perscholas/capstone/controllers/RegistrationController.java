@@ -20,7 +20,7 @@ import java.util.Locale;
 public class RegistrationController {
     private final StudentsService studentsService;
     private final ProgramService programService;
-    private static final String REDIRECT_HOME = "redirect:/";
+    private static final String REGISTRATION_CONFIRMATION = "registration-confirmation";
 
     public RegistrationController(StudentsService studentsService, ProgramService programService) {
         this.studentsService = studentsService;
@@ -36,14 +36,18 @@ public class RegistrationController {
     public String signUpNewStudent(@RequestParam("firstName") String firstName,
                                    @RequestParam("lastName") String lastName,
                                    @RequestParam("email") String email,
-                                   @RequestParam("dateOfBirth")
-                                   @DateTimeFormat(pattern = "yyyy-MM-dd")
-                                   LocalDate dateOfBirth,
+                                   @RequestParam("dateOfBirth") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateOfBirth,
                                    @RequestParam("fieldOfStudy") String fieldOfStudy) {
         Program program = programService.getProgram(fieldOfStudy);
 
         studentsService.addStudent(firstName, lastName, email, dateOfBirth, program);
 
-        return REDIRECT_HOME;
+        // Redirect to the registration confirmation page
+        return "redirect:/" + REGISTRATION_CONFIRMATION;
+    }
+
+    @GetMapping("/" + REGISTRATION_CONFIRMATION)
+    public String showRegistrationConfirmation() {
+        return REGISTRATION_CONFIRMATION;
     }
 }
