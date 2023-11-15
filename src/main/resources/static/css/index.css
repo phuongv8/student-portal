@@ -1,17 +1,12 @@
 body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+        color: #333;
 }
-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px;
-    margin-bottom: 16px;
-    border-bottom: 1px solid #dee2e6;
-}
+
 .container {
     width: 100%;
     max-width: 960px;
@@ -20,50 +15,16 @@ header {
     padding-right: 15px;
     padding-left: 15px;
 }
-.homepage {
-text-decoration: none;
-    color: black;
+
+header {
+    background-color: #e9ecef;
 }
-ul {
-    list-style: none;
-    padding-left: 0;
-    display: flex;
-    gap: 10px;
+
+.navbar-brand, .nav-link {
+    color: #0056b3;
 }
-ul li a {
-    text-decoration: none;
-    color: black;
-    padding: 8px;
+
+.nav-link:hover {
+    color: #004094;
 }
-.jumbotron {
-    padding: 32px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-    color: black;
-}
-.login-register {
-    text-align: right;
-}
-a.btn {
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #007bff;
-}
-a.btn-outline-primary {
-    background-color: transparent;
-    color: #007bff;
-    border-color: #007bff;
-}
-.btn + .btn {
-    margin-left: 8px;
-}
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-p {
-    font-size: 1.25rem;
-}
+
