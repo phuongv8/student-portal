@@ -1,0 +1,106 @@
+2023-11-14T21:29:27.464-08:00  INFO 24448 --- [restartedMain] p.capstone.CapstoneApplication           : Starting CapstoneApplication using Java 18.0.2 with PID 24448 (C:\Users\phuon\OneDrive\Máy tính\capstone\target\classes started by phuon in C:\Users\phuon\OneDrive\Máy tính\capstone)
+2023-11-14T21:29:27.466-08:00  INFO 24448 --- [restartedMain] p.capstone.CapstoneApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-11-14T21:29:27.514-08:00  INFO 24448 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-11-14T21:29:27.514-08:00  INFO 24448 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-11-14T21:29:28.047-08:00  INFO 24448 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-14T21:29:28.111-08:00  INFO 24448 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 4 JPA repository interfaces.
+2023-11-14T21:29:28.730-08:00  INFO 24448 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-14T21:29:28.740-08:00  INFO 24448 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-14T21:29:28.740-08:00  INFO 24448 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-14T21:29:28.804-08:00  INFO 24448 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-14T21:29:28.805-08:00  INFO 24448 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1291 ms
+2023-11-14T21:29:28.882-08:00  INFO 24448 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-14T21:29:29.205-08:00  INFO 24448 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1155e9e
+2023-11-14T21:29:29.207-08:00  INFO 24448 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-14T21:29:29.269-08:00  INFO 24448 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-14T21:29:29.315-08:00  INFO 24448 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-14T21:29:29.317-08:00  INFO 24448 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-14T21:29:29.596-08:00  INFO 24448 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-14T21:29:29.649-08:00  WARN 24448 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-14T21:29:30.352-08:00  INFO 24448 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-14T21:29:30.355-08:00  INFO 24448 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T21:29:30.605-08:00  INFO 24448 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-14T21:29:30.995-08:00  WARN 24448 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-14T21:29:31.101-08:00  INFO 24448 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-11-14T21:29:31.251-08:00  INFO 24448 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-11-14T21:29:31.278-08:00  INFO 24448 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-14T21:29:31.283-08:00  INFO 24448 --- [restartedMain] p.capstone.CapstoneApplication           : Started CapstoneApplication in 4.12 seconds (process running for 4.6)
+2023-11-14T21:29:37.718-08:00  INFO 24448 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-14T21:29:37.718-08:00  INFO 24448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-14T21:29:37.719-08:00  INFO 24448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-11-14T21:29:37.736-08:00  INFO 24448 --- [http-nio-8080-exec-1] p.c.i.RequestLoggingInterceptor          : Incoming request: GET / from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:37.750-08:00  INFO 24448 --- [http-nio-8080-exec-1] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /index.html from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:37.760-08:00  INFO 24448 --- [http-nio-8080-exec-1] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:37.784-08:00  INFO 24448 --- [http-nio-8080-exec-2] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /bootstrap/css/bootstrap.min.css from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:37.785-08:00  INFO 24448 --- [http-nio-8080-exec-3] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /jquery/jquery-3.6.0.min.js from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:37.785-08:00  INFO 24448 --- [http-nio-8080-exec-5] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /bootstrap/js/bootstrap.bundle.min.js from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:37.785-08:00  INFO 24448 --- [http-nio-8080-exec-4] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /css/index.css from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:37.788-08:00  INFO 24448 --- [http-nio-8080-exec-4] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:37.789-08:00  INFO 24448 --- [http-nio-8080-exec-5] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:37.789-08:00  INFO 24448 --- [http-nio-8080-exec-2] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:37.789-08:00  INFO 24448 --- [http-nio-8080-exec-3] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:39.355-08:00  INFO 24448 --- [http-nio-8080-exec-6] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /login from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:39.478-08:00  INFO 24448 --- [http-nio-8080-exec-6] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:39.497-08:00  INFO 24448 --- [http-nio-8080-exec-7] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /bootstrap/css/bootstrap.min.css from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:39.497-08:00  INFO 24448 --- [http-nio-8080-exec-8] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /jquery/jquery-3.6.0.min.js from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:39.497-08:00  INFO 24448 --- [http-nio-8080-exec-9] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /css/login.css from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:39.497-08:00  INFO 24448 --- [http-nio-8080-exec-10] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /bootstrap/js/bootstrap.bundle.min.js from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:39.499-08:00  INFO 24448 --- [http-nio-8080-exec-9] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:39.500-08:00  INFO 24448 --- [http-nio-8080-exec-10] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:39.500-08:00  INFO 24448 --- [http-nio-8080-exec-8] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:39.500-08:00  INFO 24448 --- [http-nio-8080-exec-7] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:40.836-08:00  INFO 24448 --- [http-nio-8080-exec-1] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /registration.html from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:40.839-08:00  INFO 24448 --- [http-nio-8080-exec-1] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:40.865-08:00  INFO 24448 --- [http-nio-8080-exec-2] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /bootstrap/js/bootstrap.bundle.min.js from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:40.865-08:00  INFO 24448 --- [http-nio-8080-exec-4] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /bootstrap/css/bootstrap.min.css from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:40.865-08:00  INFO 24448 --- [http-nio-8080-exec-5] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /jquery/jquery-3.6.0.min.js from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:40.865-08:00  INFO 24448 --- [http-nio-8080-exec-3] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /css/index.css from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:40.866-08:00  INFO 24448 --- [http-nio-8080-exec-6] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /images/register.png from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:40.869-08:00  INFO 24448 --- [http-nio-8080-exec-3] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:40.869-08:00  INFO 24448 --- [http-nio-8080-exec-2] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:40.869-08:00  INFO 24448 --- [http-nio-8080-exec-5] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:40.869-08:00  INFO 24448 --- [http-nio-8080-exec-6] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:40.870-08:00  INFO 24448 --- [http-nio-8080-exec-4] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:40.877-08:00  INFO 24448 --- [http-nio-8080-exec-9] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /js/registration.js from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:40.879-08:00  INFO 24448 --- [http-nio-8080-exec-9] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:43.962-08:00  INFO 24448 --- [http-nio-8080-exec-8] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /students from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:44.095-08:00  INFO 24448 --- [http-nio-8080-exec-8] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:44.114-08:00  INFO 24448 --- [http-nio-8080-exec-3] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /bootstrap/js/bootstrap.bundle.min.js from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:44.114-08:00  INFO 24448 --- [http-nio-8080-exec-10] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /bootstrap/css/bootstrap.min.css from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:44.114-08:00  INFO 24448 --- [http-nio-8080-exec-7] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /jquery/jquery-3.6.0.min.js from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:44.114-08:00  INFO 24448 --- [http-nio-8080-exec-1] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /css/index.css from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:44.117-08:00  INFO 24448 --- [http-nio-8080-exec-1] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:44.117-08:00  INFO 24448 --- [http-nio-8080-exec-3] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:44.117-08:00  INFO 24448 --- [http-nio-8080-exec-7] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:44.118-08:00  INFO 24448 --- [http-nio-8080-exec-10] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:46.659-08:00  INFO 24448 --- [http-nio-8080-exec-5] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /programs from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:46.684-08:00  INFO 24448 --- [http-nio-8080-exec-5] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:46.707-08:00  INFO 24448 --- [http-nio-8080-exec-6] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /jquery/jquery-3.6.0.min.js from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:46.707-08:00  INFO 24448 --- [http-nio-8080-exec-9] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /bootstrap/js/bootstrap.bundle.min.js from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:46.707-08:00  INFO 24448 --- [http-nio-8080-exec-2] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /bootstrap/css/bootstrap.min.css from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:46.707-08:00  INFO 24448 --- [http-nio-8080-exec-4] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /css/index.css from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:46.711-08:00  INFO 24448 --- [http-nio-8080-exec-4] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:46.711-08:00  INFO 24448 --- [http-nio-8080-exec-9] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:46.711-08:00  INFO 24448 --- [http-nio-8080-exec-6] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:46.712-08:00  INFO 24448 --- [http-nio-8080-exec-2] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:47.780-08:00  INFO 24448 --- [http-nio-8080-exec-8] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /courses from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:47.801-08:00  INFO 24448 --- [http-nio-8080-exec-8] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:47.823-08:00  INFO 24448 --- [http-nio-8080-exec-1] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /bootstrap/css/bootstrap.min.css from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:47.824-08:00  INFO 24448 --- [http-nio-8080-exec-10] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /bootstrap/js/bootstrap.bundle.min.js from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:47.824-08:00  INFO 24448 --- [http-nio-8080-exec-3] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /jquery/jquery-3.6.0.min.js from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:47.824-08:00  INFO 24448 --- [http-nio-8080-exec-7] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /css/index.css from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:47.827-08:00  INFO 24448 --- [http-nio-8080-exec-7] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:47.827-08:00  INFO 24448 --- [http-nio-8080-exec-1] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:47.827-08:00  INFO 24448 --- [http-nio-8080-exec-10] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:47.827-08:00  INFO 24448 --- [http-nio-8080-exec-3] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:50.460-08:00  INFO 24448 --- [http-nio-8080-exec-5] p.c.i.RequestLoggingInterceptor          : Incoming request: GET / from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:50.461-08:00  INFO 24448 --- [http-nio-8080-exec-5] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /index.html from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:50.463-08:00  INFO 24448 --- [http-nio-8080-exec-5] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:50.487-08:00  INFO 24448 --- [http-nio-8080-exec-6] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /jquery/jquery-3.6.0.min.js from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:50.487-08:00  INFO 24448 --- [http-nio-8080-exec-9] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /css/index.css from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:50.487-08:00  INFO 24448 --- [http-nio-8080-exec-4] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /bootstrap/css/bootstrap.min.css from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:50.487-08:00  INFO 24448 --- [http-nio-8080-exec-2] p.c.i.RequestLoggingInterceptor          : Incoming request: GET /bootstrap/js/bootstrap.bundle.min.js from 0:0:0:0:0:0:0:1
+2023-11-14T21:29:50.489-08:00  INFO 24448 --- [http-nio-8080-exec-9] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:50.490-08:00  INFO 24448 --- [http-nio-8080-exec-6] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:50.490-08:00  INFO 24448 --- [http-nio-8080-exec-2] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
+2023-11-14T21:29:50.490-08:00  INFO 24448 --- [http-nio-8080-exec-4] p.c.interceptor.ResponseLoggingFilter    : Outgoing response with status: 200
