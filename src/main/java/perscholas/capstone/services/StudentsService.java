@@ -2,6 +2,7 @@ package perscholas.capstone.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import perscholas.capstone.model.Course;
@@ -11,7 +12,6 @@ import perscholas.capstone.model.Student;
 import perscholas.capstone.repositories.LearnerProfilesRepository;
 import perscholas.capstone.repositories.StudentsRepository;
 
-import javax.xml.crypto.Data;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -27,11 +27,13 @@ import java.util.Set;
 public class StudentsService {
     private final StudentsRepository studentsRepository;
     private final LearnerProfilesRepository learnerProfilesRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public StudentsService(StudentsRepository studentsRepository, LearnerProfilesRepository learnerProfilesRepository) {
+    public StudentsService(StudentsRepository studentsRepository, LearnerProfilesRepository learnerProfilesRepository, PasswordEncoder passwordEncoder) {
         this.studentsRepository = studentsRepository;
         this.learnerProfilesRepository = learnerProfilesRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     /**
@@ -65,19 +67,18 @@ public class StudentsService {
                            String email, LocalDate dateOfBirth,
                            Program program) {
         try {
+            LearnerProfile learnerProfile = new LearnerProfile();
+            learnerProfile.setNumberOfCredits(0);
+            learnerProfile.setGraduated(false);
+            learnerProfile.setGpa(0.0f);
+            learnerProfile.setStartYear((short) LocalDate.now().getYear());
 
+            Student student = new Student(firstName, lastName, email, dateOfBirth, program);
+            student.setLearnerProfile(learnerProfile);
+            student.setPassword(passwordEncoder.encode(lastName));
 
-        LearnerProfile learnerProfile = new LearnerProfile();
-        learnerProfile.setNumberOfCredits(0);
-        learnerProfile.setGraduated(false);
-        learnerProfile.setGpa(0.0f);
-        learnerProfile.setStartYear((short) LocalDate.now().getYear());
-
-        Student student = new Student(firstName, lastName, email, dateOfBirth, program);
-        student.setLearnerProfile(learnerProfile);
-
-        learnerProfilesRepository.save(learnerProfile);
-        studentsRepository.save(student);
+            learnerProfilesRepository.save(learnerProfile);
+            studentsRepository.save(student);
         } catch (DataAccessException e) {
             throw new StudentServiceException("Error adding new student", e);
         }
