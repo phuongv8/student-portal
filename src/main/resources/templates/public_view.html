@@ -19,7 +19,10 @@
 
 <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <a href="/" class="navbar-brand text-dark">
+        <a th:if="${isLoggedIn}" th:href="@{/student(student_id=${student_id})}" class="navbar-brand text-dark">
+            Student Profile
+        </a>
+        <a th:unless="${isLoggedIn}" href="/" class="navbar-brand text-dark">
             Home
         </a>
 
@@ -29,10 +32,14 @@
             <li><a href="/courses" class="nav-link px-2 link-dark">Courses</a></li>
         </ul>
 
-        <div class="col-md-3 text-end">
-            <a class="btn btn-outline-primary me-2" href="login">Login</a>
+        <div class="col-md-3 text-end" th:if="${isLoggedIn}">
+            <a class="btn btn-outline-primary me-2" href="/logout">Log Out</a>
+        </div>
+        <div class="col-md-3 text-end" th:unless="${isLoggedIn}">
+            <a class="btn btn-outline-primary me-2" href="/login">Login</a>
             <a class="btn btn-primary" href="/registration">Register</a>
         </div>
+
     </header>
 </div>
 <main>
