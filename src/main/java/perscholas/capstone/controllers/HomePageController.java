@@ -3,6 +3,7 @@ package perscholas.capstone.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import perscholas.capstone.model.Course;
 import perscholas.capstone.model.Program;
 import perscholas.capstone.model.Student;
@@ -34,6 +35,11 @@ public class HomePageController {
         this.studentsService = studentsService;
         this.programService = programService;
         this.coursesService = coursesService;
+    }
+
+    @GetMapping("/")
+    public String home() {
+        return "index";
     }
 
     /**

@@ -27,6 +27,11 @@ public class RegistrationController {
         this.programService = programService;
     }
 
+    @GetMapping("/registration")
+    public String showRegistrationForm() {
+        return "registration";
+    }
+
     /**
      * Handles the request to sign up a new student.
      * Registers a student with the provided personal details and enrolls them in a program.
