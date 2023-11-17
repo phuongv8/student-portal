@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS Students (
     last_name VARCHAR(60) NOT NULL,
     email VARCHAR(60) NOT NULL UNIQUE,
     date_of_birth DATE,
+    password VARCHAR(255),
     profile_id BIGINT,
     program_id BIGINT,
     FOREIGN KEY (profile_id) REFERENCES LearnerProfiles (profile_id),

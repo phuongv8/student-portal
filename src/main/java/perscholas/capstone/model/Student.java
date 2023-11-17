@@ -28,6 +28,9 @@ public class Student {
 
     private LocalDate dateOfBirth;
 
+    @Column(nullable = false)
+    private String password;
+
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "profile_id")
     private LearnerProfile learnerProfile;
@@ -86,6 +89,13 @@ public class Student {
         return enrolledIn;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public void setLearnerProfile(LearnerProfile learnerProfile) {
         this.learnerProfile = learnerProfile;
