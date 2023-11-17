@@ -46,11 +46,11 @@
     <div class="container">
 
         <!-- COURSES -->
-        <div class="container" th:if="${show_courses}">
+        <div th:if="${show_courses}">
             <h2 class="pb-2 border-bottom mt-4">Fall 2023 - Available Courses</h2>
-        	<br>
+            <br>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-				<div class="col" th:each="course: ${courses}">
+                <div class="col" th:each="course: ${courses}">
                     <div class="card shadow-sm bg-light h-100 d-flex flex-column">
                         <div class="card-body">
                             <h4 class="text-center py-2 card-title" th:text="${#strings.abbreviate(course.title, 120)}">Course</h4>
@@ -65,7 +65,7 @@
         <div class="container">
             <h2 class="pb-2 border-bottom mt-4" th:if="${show_programs}">All Bachelor Degrees</h2>
             <div class="card my-2 my-lg-3" th:if="${show_programs}" th:each="program: ${programs}">
-            	<div class="card-body">
+                <div class="card-body">
                     <h2 class="card-title"
                         th:text="${program.fieldOfStudy}"></h2>
                     <p th:inline="text">
@@ -78,26 +78,31 @@
 
         <!-- STUDENTS -->
         <div class="container" th:if="${show_students}">
-            <h2 class="pb-2 border-bottom mt-4">Student Directory</h2>
-            <br>
-            <table class="table table-striped">
-                <thead>
+            <div th:if="${isLoggedIn}">
+                <h2 class="pb-2 border-bottom mt-4">Student Directory</h2>
+                <br>
+                <table class="table table-striped">
+                    <thead>
                     <tr>
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
                         <th scope="col">Email Address</th>
                         <th scope="col">Date of Birth</th>
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
                     <tr th:each="student: ${students}">
                         <td th:each="value: ${student.firstName}" th:text="${value}">Blank</td>
                         <td th:each="value: ${student.lastName}" th:text="${value}">Blank</td>
                         <td th:each="value: ${student.email}" th:text="${value}">Blank</td>
                         <td th:each="value: ${student.dateOfBirth}" th:text="${value}">Blank</td>
                     </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
+            <div th:unless="${isLoggedIn}">
+                <p>Log in to see this.</p>
+            </div>
         </div>
     </div>
 </main>
