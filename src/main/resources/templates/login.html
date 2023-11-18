@@ -39,8 +39,11 @@
         </svg>
         
         <h1 class="h3 my-4 fw-normal">Welcome back</h1>
+        <p>For new student: Password will be your last name.</p>
 
-		<div class="alert alert-danger" role="alert" th:if="${error}" th:text="${error_message}"></div>
+        <div class="alert alert-danger" role="alert" th:if="${param.error}">
+            <p th:text="${session.errorMessage}">Default error message</p>
+        </div>
 
         <div class="form-floating">
             <input class="form-control" id="floatingInput" placeholder="name@example.com" type="email" name="email">

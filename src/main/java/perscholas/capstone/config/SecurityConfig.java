@@ -13,10 +13,12 @@ import org.springframework.security.web.SecurityFilterChain;
 import perscholas.capstone.services.CustomUserDetailsService;
 
 @Configuration
-@EnableWebSecurity(debug = true)
+@EnableWebSecurity
 public class SecurityConfig {
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
+    @Autowired
+    private CustomAuthenticationFailureHandler customAuthenticationFailureHandler;
 
     public SecurityConfig(CustomUserDetailsService customUserDetailsService) {
         this.customUserDetailsService = customUserDetailsService;
@@ -37,10 +39,10 @@ public class SecurityConfig {
                 )
                 .formLogin(formLogin -> formLogin
                         .loginPage("/login")
+                        .failureHandler(customAuthenticationFailureHandler)
                         .usernameParameter("email")
                         .passwordParameter("password")
                         .defaultSuccessUrl("/profile", true)
-                        .failureUrl("/login?error=true")
                         .permitAll()
                 )
                 .logout((logout) -> logout
