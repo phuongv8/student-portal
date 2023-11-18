@@ -43,7 +43,7 @@ spring.datasource.password=password
 This application uses Spring Boot's automatic schema initialization feature.  
 To enable it, open the application.properties file and uncomment the following lines:
 ```properties
-spring.datasource.initialization-mode=always
+spring.sql.init.mode=always
 spring.sql.init.schema-locations=classpath:schema.sql
 spring.sql.init.data-locations=classpath:data.sql
 ```
