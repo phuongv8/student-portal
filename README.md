@@ -54,3 +54,22 @@ If you prefer to manually initialize the database, you can use the provided SQL 
 
 # Running the application
 Open a web browser and navigate to `http://localhost:8080`.
+
+## Login using Demo Account
+1. Email: hammy@universityofhamster.edu
+Password: Hamster
+2. Email: hampter@universityofhamster.edu
+   Password: Cheese
+3. Email: buttercup.squeakins@universityofhamster.edu
+   Password: Squeakins
+
+# Future Implementations
+- Implement two-factor authentication (2FA) for added security.
+- Allow users to change their password.
+- Allow users to reset their passwords through email verification.
+- Fix UI: Stop page from auto scroll up after student drops a class.
+- Enable teachers to log in and view the GPA of students.
+- Provide teachers with the ability to view a list of all students enrolled in their courses.
+- Allow students to see a list of all students enrolled in their classes.
+- Enable teachers and administrators to update and change course descriptions.
+- Show the number of credit hours associated with each course on the course information page.
