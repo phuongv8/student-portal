@@ -47,6 +47,14 @@ spring.sql.init.mode=always
 spring.sql.init.schema-locations=classpath:schema.sql
 spring.sql.init.data-locations=classpath:data.sql
 ```
+Change this line
+```
+spring.jpa.hibernate.ddl-auto=none
+```
+to
+```
+spring.jpa.hibernate.ddl-auto=update
+```
 
 ## Manual Initialization
 If you prefer to manually initialize the database, you can use the provided SQL scripts in src/main/resources/sql_queries.  
