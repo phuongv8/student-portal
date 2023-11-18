@@ -34,7 +34,6 @@ public class ProgramService {
             Optional<Program> program = programsRepository.findByFieldOfStudy(fieldOfStudy);
             return program.orElseThrow(() -> new ProgramNotFoundException("Program not found for field of study: " + fieldOfStudy));
         } catch (DataAccessException e) {
-            // Log and handle the data access exception
             throw new ProgramServiceException("Error accessing data for field of study: " + fieldOfStudy, e);
         }
     }
