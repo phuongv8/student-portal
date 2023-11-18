@@ -19,11 +19,4 @@ public interface StudentsRepository extends JpaRepository<Student, Long> {
      */
     @Query("SELECT s FROM Student s WHERE s.program.fieldOfStudy = :fieldOfStudy")
     List<Student> findByFieldOfStudy(@Param("fieldOfStudy") String fieldOfStudy);
-
-    /**
-     * Future implementation
-     * Find students with GPA greater than a certain value
-     */
-    @Query("SELECT s FROM Student s WHERE s.learnerProfile.gpa > :gpa")
-    List<Student> findByGpaGreaterThan(@Param("gpa") float gpa);
 }
