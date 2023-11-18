@@ -27,9 +27,9 @@ INSERT INTO LearnerProfiles (number_of_credits, gpa, is_graduated, start_year) V
 INSERT INTO Students (first_name, last_name, email, date_of_birth, password, profile_id, program_id)
 VALUES ('Hammy', 'Hamster', 'hammy@universityofhamster.edu', '2021-01-01', '$2a$10$ZyFUOwQLd6C9R191Vw/QlusZxJiH7WZ1PbTScblnu.p79umvv4E62', 1, 1);
 INSERT INTO Students (first_name, last_name, email, date_of_birth, password, profile_id, program_id)
-VALUES ('Hampter', 'Cheese', 'hampter@universityofhamster.edu', '2021-02-02', "$2a$10$PhrYWVMN5lpeg9/6iy.9iuiYk6gdiIQN8p16iEXKJF8ADNZKLkgT6", 2, 2);
+VALUES ('Hampter', 'Cheese', 'hampter@universityofhamster.edu', '2021-02-02', '$2a$10$PhrYWVMN5lpeg9/6iy.9iuiYk6gdiIQN8p16iEXKJF8ADNZKLkgT6', 2, 2);
 INSERT INTO Students (first_name, last_name, email, date_of_birth, password, profile_id, program_id)
-VALUES ('Buttercup', 'Squeakins', 'buttercup.squeakins@universityofhamster.edu', '2021-10-15', "$2a$10$DvOo7iDYat1aDcDBgSxtIOJ3n147nP6MqQ3zB7YEQCMduGwl9hmNG", 3, 3);
+VALUES ('Buttercup', 'Squeakins', 'buttercup.squeakins@universityofhamster.edu', '2021-10-15', '$2a$10$DvOo7iDYat1aDcDBgSxtIOJ3n147nP6MqQ3zB7YEQCMduGwl9hmNG', 3, 3);
 
 INSERT INTO CourseEnrollments (course_id, enrolled_student_id) VALUES (1, 1);
 INSERT INTO CourseEnrollments (course_id, enrolled_student_id) VALUES (2, 1);
