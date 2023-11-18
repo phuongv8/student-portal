@@ -7,7 +7,6 @@ import perscholas.capstone.model.Course;
 import perscholas.capstone.model.Program;
 import perscholas.capstone.model.Student;
 import perscholas.capstone.services.CoursesService;
-import perscholas.capstone.services.LearnerProfileService;
 import perscholas.capstone.services.ProgramService;
 import perscholas.capstone.services.StudentsService;
 import java.security.Principal;
