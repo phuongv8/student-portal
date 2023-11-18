@@ -19,7 +19,7 @@ public class Program {
     private Long programId;
 
     @Column(nullable = false)
-    private final int requiredCreditsToGraduation;
+    private int requiredCreditsToGraduation;
 
     @Column(nullable = false)
     private String fieldOfStudy;
@@ -46,6 +46,14 @@ public class Program {
 
     public String getFieldOfStudy() {
         return fieldOfStudy;
+    }
+
+    public void setRequiredCreditsToGraduation(int requiredCreditsToGraduation) {
+        this.requiredCreditsToGraduation = requiredCreditsToGraduation;
+    }
+
+    public void setFieldOfStudy(String fieldOfStudy) {
+        this.fieldOfStudy = fieldOfStudy;
     }
 
     /**
