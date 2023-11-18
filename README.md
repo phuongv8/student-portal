@@ -31,7 +31,6 @@ Before running the application, you need to create the database.
 To create the required database within MySQL:
 ```sql 
 CREATE DATABASE IF NOT EXISTS university_db;
-EXIT;
 ```
 
 Replace username and password with your MySQL username and password.
@@ -56,11 +55,11 @@ If you prefer to manually initialize the database, you can use the provided SQL 
 Open a web browser and navigate to `http://localhost:8080`.
 
 ## Login using Demo Account
-1. Email: hammy@universityofhamster.edu
+1. Email: hammy@universityofhamster.edu  
 Password: Hamster
-2. Email: hampter@universityofhamster.edu
+2. Email: hampter@universityofhamster.edu  
    Password: Cheese
-3. Email: buttercup.squeakins@universityofhamster.edu
+3. Email: buttercup.squeakins@universityofhamster.edu  
    Password: Squeakins
 
 # Future Implementations
